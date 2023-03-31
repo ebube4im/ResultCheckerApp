@@ -1,0 +1,289 @@
+﻿body {
+    
+    /*padding-bottom: 20px;*/
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+ 
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+ 
+/*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
+
+
+/**
+ * 1. Change the default font family in all browsers (opinionated).
+ * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
+ */
+
+
+/* line 8, ../scss/_normalize.scss */
+
+html {
+    font-family: sans-serif;
+    /* 1 */
+    -ms-text-size-adjust: 100%;
+    /* 2 */
+    -webkit-text-size-adjust: 100%;
+    /* 2 */
+}
+
+ 
+body {
+    /*margin: 0;*/
+}
+
+ 
+
+/* line 31, ../scss/_normalize.scss */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+    /* 1 */
+    display: block;
+}
+
+ 
+a {
+    background-color: transparent;
+    /* 1 */
+    -webkit-text-decoration-skip: objects;
+    /* 2 */
+}
+
+ 
+a:active,
+a:hover {
+    outline-width: 0;
+}
+
+  
+h1 {
+    font-size: 2em;
+    /*margin: 0.67em 0;*/
+}
+ button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+    /* 2 */
+}
+
+  
+body {
+    color: white;
+}
+
+.myindex{
+    z-index : 1;
+    height:20px;
+}
+
+/* line 18, ../scss/styles.scss */
+
+body #container {
+    max-width: 100%;
+    /*margin-left: auto;
+        margin-right: auto;*/
+    /*background-size: 8.47458%, 100% 24px;*/
+    background-origin: content-box, border-box;
+    background-clip: content-box, border-box;
+    background-position: left top;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+   
+    background-image: url('bg.JPG');
+ 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #27ae60;
+}
+
+
+/* line 12, ../../../../Ruby25-x64/lib/ruby/gems/2.5.0/gems/susy-2.2.14/sass/susy/output/support/_clearfix.scss */
+
+body #container:after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+
+
+/* line 29, ../scss/styles.scss */
+
+body #container #overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(30, 10, 20, 0.5)
+}
+
+
+/* line 34, ../scss/styles.scss */
+
+body span h1 {
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.67);
+}
+
+@media (min-width: 720px) {
+    /* line 34, ../scss/styles.scss */
+    body span h1 {
+        font-size: 2em;
+    }
+}
+
+
+/* line 42, ../scss/styles.scss */
+
+#logo {
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 1.0);
+    border-radius: 3px 3px;
+}
+
+
+/* line 47, ../scss/styles.scss */
+
+#login {
+    width: 100%;
+    z-index: 1;
+   
+}
+
+
+/* line 52, ../scss/styles.scss */
+
+form {
+    -moz-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.67);
+    -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.67);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.67);
+    background-color: rgba(14, 14, 14, 0.45882);
+    padding: 5px 5px 10px 30px;
+     
+    max-width:500px;
+   
+    
+   /*// max-height:300px;*/
+}
+
+
+/* line 56, ../scss/styles.scss */
+
+form input[type="password"] {
+    /*margin-top: 6.77966%;*/
+}
+
+
+/* line 59, ../scss/styles.scss */
+
+/*form input[type="email"],
+form input[type="password"] {
+    width: 100%;
+    padding: 5px 1.69492%;
+    font-family: serif;
+    outline: none;
+    border: 1px solid transparent;
+}*/
+
+
+/* line 65, ../scss/styles.scss */
+
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+    border: 1px solid #555555;
+
+}
+
+
+/* line 70, ../scss/styles.scss */
+
+/*form #submitContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}*/
+
+form input[type="text"]{
+    font: 2em;
+    width: 100%;
+}
+
+form input[type="submit"] {
+        outline: none;
+        border: 1px solid white;
+        color: #f5f2f2;
+        background-color: transparent;
+        padding: 5px 20px;
+        font-family: "Slabo 27px", serif;
+        /*margin-top: 10.52632%;*/
+        -moz-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.67);
+        -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.67);
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.67);
+        cursor: pointer;
+    }
+
+@media (min-width: 720px) {
+    /* line 74, ../scss/styles.scss */
+    /*form input[type="submit"] {
+        outline: none;
+        border: 1px solid white;
+        color: #f5f2f2;
+        background-color: transparent;
+        padding: 5px 20px;
+        font-family: "Slabo 27px", serif;
+        margin-top: 10.52632%;
+        -moz-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.67);
+        -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.67);
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.67);
+        cursor: pointer;
+    }*/
+}
+
+
+/* line 88, ../scss/styles.scss */
+
+form h3 {
+    color: rgba(253, 243, 74, 0.87);
+}
+
+
+/* line 93, ../scss/styles.scss */
+
+.required {
+    font-family: "Slabo 27px", serif;
+}
+
+
+/* line 95, ../scss/styles.scss */
+
+.required span {
+    color: #e74c3c;
+}

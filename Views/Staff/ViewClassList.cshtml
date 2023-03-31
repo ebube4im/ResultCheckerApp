@@ -1,0 +1,22 @@
+﻿@model GodlySeeds_Online_Result_Checker.Models.StaffLoginViewModel
+
+@{
+     
+    ViewBag.Title = "ViewClassList";
+}
+
+<h2>ViewClassList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div class="jumbotron"
+     >
+    @foreach (string item in Model.CheckedList)
+    {
+         <p> @item </p>
+    }
+</div>
+
+@Html.Partial("_classListView", Model.classListViewModel)

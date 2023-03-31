@@ -1,0 +1,75 @@
+﻿
+@model GodlySeeds_Online_Result_Checker.Models.PrintResultViewModel
+
+@{
+    Layout = "~/Views/Shared/_LoginLayoutPage.cshtml";
+}
+
+    <section id="loginForm">
+
+        @using (Html.BeginForm("Index", "ELearning", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            <img id="logo" src="~/Content/GodlyseedsenuguLogo.png" height="100" />
+
+            @Html.AntiForgeryToken()
+            <h3>School E-Learning Portal</h3>
+
+            if (Model.ErrorMessage != null)
+            {
+                <p class="alert alert-danger"> @Model.ErrorMessage </p>
+
+            }
+
+            <hr />
+            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+            <div class="form-group col-lg-10 col-md-10 col-sm-10 col-xs-12">
+
+                @Html.LabelFor(m => m.AdmissionNo, new { @class = "col-lg-10 col-md-8 col-xs-10" })
+                @Html.TextBoxFor(m => m.AdmissionNo, new { @class = "form-control", @placeholder = "Enter Child's Admission Number" })
+                @Html.ValidationMessageFor(m => m.AdmissionNo, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-10 col-sm-10 col-xs-12">
+
+                    @Html.LabelFor(m => m.Class, new { @class = "col-lg-10 col-md-8 col-xs-10" })
+
+
+                    <select name="Class" class="form-control">
+                        <option value="JSS 1A">JSS 1A</option>
+                        <option value="JSS 1B">JSS 1B</option>
+                        <option value="JSS 2A">JSS 2A</option>
+                        <option value="JSS 2B">JSS 2B </option>
+                        <option value="JSS 3A">JSS 3A</option>
+                        <option value="JSS 3B">JSS 3B </option>
+                        <option value="SSS 1A">SSS 1A </option>
+                    </select>
+
+                    @Html.ValidationMessageFor(m => m.Class, "", new { @class = "text-danger" })
+
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <div class="col-md-10 col-sm-10 col-xs-12">
+                    <input type="submit" value="Start Learning" class="btn btn-lg btn-default" />
+
+                </div>
+ 
+            </div>
+
+            //Enable this once you have account confirmation enabled for password reset functionality
+
+        }
+    </section>
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

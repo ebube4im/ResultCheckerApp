@@ -1,0 +1,83 @@
+﻿@model GodlySeeds_Online_Result_Checker.Models.StaffLoginViewModel
+@{
+    Layout = "~/Views/Shared/_LoginLayoutPage.cshtml";
+
+    ViewBag.Title = "Index";
+}
+
+
+<section id="loginForm">
+
+    @using (Html.BeginForm("ViewClassList", "Staff", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <h3>School Portal Login</h3>
+
+        if (Model.ErrorMessage != null)
+        {
+            <p class="alert alert-danger"> @Model.ErrorMessage </p>
+
+        }
+
+        <hr />
+        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+        <div class="form-group col-lg-10 col-md-10 col-sm-10 col-xs-12">
+
+            @Html.LabelFor(m => m.Username, new { @class = "col-lg-10 col-md-8 col-xs-10" })
+            @Html.TextBoxFor(m => m.Username, new { @class = "form-control", @placeholder = "Enter Staff Username" })
+            @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
+        </div>
+
+
+        <div class="form-group col-lg-10 col-md-10 col-sm-10 col-xs-12">
+
+            @Html.LabelFor(m => m.Password, new { @class = "col-lg-10 col-md-8 col-xs-10" })
+            @Html.TextBoxFor(m => m.Password, new { @class = "form-control", @placeholder = "Enter Staff Password" })
+            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-10 col-sm-10 col-xs-12">
+
+                @Html.LabelFor(m => m.classList, new { @class = "col-lg-10 col-md-8 col-xs-10" })
+
+
+                <select name="Class" class="form-control">
+                    <option value="JSS 1A">JSS 1A</option>
+                    <option value="JSS 1B">JSS 1B</option>
+                    <option value="JSS 2A">JSS 2A</option>
+                    <option value="JSS 2B">JSS 2B </option>
+                    <option value="JSS 3A">JSS 3A</option>
+                    <option value="JSS 3B">JSS 3B </option>
+                    <option value="SSS 1A">SSS 1A </option>
+                </select>
+
+                @Html.ValidationMessageFor(m => m.classList, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <div class="col-md-10 col-sm-10 col-xs-12">
+                <input type="submit" value="View ClassList" class="btn btn-lg btn-default" />
+                <p>
+                    @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                </p>
+            </div>
+
+
+        </div>
+
+        //Enable this once you have account confirmation enabled for password reset functionality
+
+    }
+</section>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

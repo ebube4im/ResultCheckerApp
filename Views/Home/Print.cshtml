@@ -1,0 +1,300 @@
+﻿@model GodlySeeds_Online_Result_Checker.Models.PrintResultViewModel
+
+@{
+
+}
+
+
+
+
+<div class="page" contenteditable="false">
+
+    @*<script>
+            alert("Announcement: Note that a portal upgrade will occur from Wednesday 2nd December to Friday 5th December 2020. You will be required to login using your admission number and a default password: Password@123 <br> Thanks for your understanding. ")
+        </script>*@
+
+
+    <div class="row">
+
+        <div class="col-10">
+            <img src="~/Content/godlyseeds2.png" class="img himg float-left" alt="Godly Seeds Logo" />
+
+
+            <div style="text-align:center; float:none">
+                <h1><strong>GODLY SEEDS CHRISTIAN COLLEGE ENUGU</strong> </h1>
+                <h6><strong>P.O. BOX 9085 | TEL: 09072097180  | Email: godlyseedsenugu@gmail.com </strong></h6>
+                <h6><strong>Website: www.godlyseedsenugu.org  |  Fb: Godly Seeds Christian College </strong></h6>
+                <h3>
+                    CONTINUOUS ASSESSMENT DOSSIER  |  @Html.DisplayFor(model => model.Class)
+                </h3>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="details">
+
+        <table class="table col-lg-10 col-sm-10 col-xs-10 table-sm">
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.StudentName)  :  <strong> @Html.DisplayFor(model => model.StudentName) </strong></td>
+
+                <td>
+                    @Html.DisplayNameFor(model => model.AdmissionNo) :
+                    <strong>
+                        @{ if (Model.Class == "JSS 1A" || Model.Class == "JSS 1B")
+                            { <p> nothing </p> }
+
+                            else
+                            { @Html.DisplayFor(model => model.AdmissionNo);
+                        } }
+                    </strong>
+                </td>
+
+                <td>
+                    @Html.DisplayNameFor(model => model.Gender)  : <strong> @Html.DisplayFor(model => model.Gender) </strong>
+                </td>
+                <td>
+                    Session:  <strong>
+
+                        @{
+                            if (Model.Session == "2020")
+                            {
+                                ViewBag.Session = "2019/2020";
+                            }
+                            else if (Model.Session == "2021")
+                            {
+                                ViewBag.Session = "2020/2021";
+                            }
+                            else
+                             if (Model.Session == "2022")
+                            {
+                                ViewBag.Session = "2021/2022";
+                            }
+
+                        }
+
+                        @ViewBag.Session
+                    </strong>
+                </td>
+            </tr>
+
+            <tr>
+
+
+
+                <td>@Html.DisplayNameFor(model => model.NoinClass)   : <strong> @Html.DisplayFor(model => model.NoinClass) </strong></td>
+
+
+                @if (Model.Term == "Annual")
+                {
+                    <td>Annual Position :  <strong> @Html.DisplayFor(model => model.printAnnualViewModel.ANNUALPOSITION) </strong></td>
+
+                    if (Model.printAnnualViewModel.Class == "JSS 1A" || Model.printAnnualViewModel.Class == "JSS 1B")
+                    {
+                        <td>Overall Position in JSS1 :  <strong> @Html.DisplayFor(model => model.printAnnualViewModel.OVERALLPOSITION) out of 69</strong></td>
+
+                    }
+
+                    if (Model.printAnnualViewModel.Class == "JSS 2A" || Model.printAnnualViewModel.Class == "JSS 2B")
+                    {
+                        <td>Overall Position in JSS2 :  <strong> @Html.DisplayFor(model => model.printAnnualViewModel.OVERALLPOSITION) out of 65</strong></td>
+
+                    }
+                    //         <td>Overall Position in JSS1 :  <strong> @Html.DisplayFor(model => model.printAnnualViewModel.OVERALLPOSITION) out of 80</strong></td>
+                }
+                else
+                {
+                    <td>Position :  <strong> @Html.DisplayFor(model => model.Position) </strong></td>
+
+                }
+
+            </tr>
+        </table>
+
+    </div>
+
+
+
+    <div class="row" style="margin-top:0px;">
+
+        @if (Model.Term == "Annual")
+        {
+            @Html.Partial("_AnnualPView", Model.annualSubjects)
+        }
+        else
+        {
+            @Html.Partial("_ResultTable", Model.mySubjects)
+        }
+
+
+
+    </div>
+
+    <table border="1" style="width:100%; margin-top:-20px" class="table mytable table-responsive table-striped mytable col-lg-12 col-sm-12 col-xs-12">
+
+        @if (Model.Term == "Annual")
+        {
+
+            <tr class="trmin">
+                <td>
+                    @Html.DisplayNameFor(model => model.printAnnualViewModel.firstTermTotalAverage)  : <strong> @Html.DisplayFor(model => model.printAnnualViewModel.firstTermTotalAverage) </strong>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    @Html.DisplayNameFor(model => model.printAnnualViewModel.secondTermTotalAverage)  : <strong> @Html.DisplayFor(model => model.printAnnualViewModel.secondTermTotalAverage)  </strong>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    @Html.DisplayNameFor(model => model.printAnnualViewModel.thirdTermTotalAverage)  : <strong> @Html.DisplayFor(model => model.printAnnualViewModel.thirdTermTotalAverage) </strong>
+
+                </td>
+            </tr>
+        }
+
+
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.TotalMarksObtained)  : <strong> @Html.DisplayFor(model => model.TotalMarksObtained) </strong>
+                &nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                @Html.DisplayNameFor(model => model.TotalMarksObtainable)  : <strong> @Html.DisplayFor(model => model.TotalMarksObtainable)  </strong>
+                &nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+                @if (Model.Term == "Annual")
+                {
+                    @Html.DisplayNameFor(model => model.printAnnualViewModel.Average);
+                    <strong> : @Html.DisplayFor(model => model.printAnnualViewModel.Average) &nbsp; &nbsp;  | &nbsp; &nbsp;  </strong>
+
+                    <br />
+                    @Html.DisplayNameFor(model => model.printAnnualViewModel.ANNUALPOSITION);
+                    <strong> : @Html.DisplayFor(model => model.printAnnualViewModel.ANNUALPOSITION) &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp;  </strong>
+
+                    if (Model.printAnnualViewModel.Class == "JSS 1A" || Model.printAnnualViewModel.Class == "JSS 1B")
+                    {
+                        @Html.DisplayNameFor(model => model.printAnnualViewModel.OVERALLPOSITION);
+                        <strong> : @Html.DisplayFor(model => model.printAnnualViewModel.OVERALLPOSITION) out of 69  </strong>
+
+                    }
+                    if (Model.printAnnualViewModel.Class == "JSS 2A" || Model.printAnnualViewModel.Class == "JSS 2B")
+                    {
+                        @Html.DisplayNameFor(model => model.printAnnualViewModel.OVERALLPOSITION);
+                        <strong> : @Html.DisplayFor(model => model.printAnnualViewModel.OVERALLPOSITION) out of 65  </strong>
+
+
+                    }
+                }
+                else
+                {
+                    @Html.DisplayNameFor(model => model.Average);
+                    <strong> : @Html.DisplayFor(model => model.Average)       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </strong>
+                    @Html.DisplayNameFor(model => model.Position); <strong> : @Html.DisplayFor(model => model.Position) </strong>
+
+
+                }
+
+
+            </td>
+        </tr>
+        @if (Model.Term == "Annual")
+        {
+
+            <tr>
+                <td> <strong>PRINCIPALS REMARK:  Based on your performance, your promotional status is -  @Html.DisplayFor(model => model.printAnnualViewModel.PromotionStatus) </strong> </td>
+            </tr>
+        }
+        <tr>
+            <td>
+                PRINCIPAL'S NAME  :  MRS UCHE NWANERI   &nbsp;&nbsp;  |  &nbsp;&nbsp;     SIGNATURE :&nbsp;
+                <img src="~/Content/IMG_20210327_110139_0.jpg" style="width:70px; height:30px" />
+                |  &nbsp;&nbsp;&nbsp; DATE Printed:  @DateTime.Now.Date.ToShortDateString()   |
+                &nbsp;&nbsp; <button onclick="window.print()" class="btn btn-danger btn-xs"> Download Result</button>
+
+            </td>
+        </tr>
+
+
+        <tr>
+            <td>
+                <p>
+                    KEYS TO GRADING: A1- Excellent; B2- Very Good; B3- Good; C4- Credit; C5- Credit; D7- Pass; E8- Weak Pass; F9- Fail;
+                </p>
+                <p>
+                    A1:- 75 & Above | B2:- 70-74 | B3:- 65-69 | C4:- 60-64 | C5:- 55-59 | C6:- 50-54 | D7:- 45-49 | E8:- 40-44 | F9:- 0-39
+                </p>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Powered by 4im Digitals
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://4imdigitals.com"> 4im Digitals </a>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 07038229702
+
+            </td>
+
+
+        </tr>
+    </table>
+
+</div>
+
+
+
+
+@if (Model.Term != "Annual")
+{
+
+    <div class="page" id="notice" contenteditable="false">
+
+        <h1> GODLY SEEDS CHRISTIAN COLLEGE </h1>
+        <h4>3nd Term Newsletter</h4>
+
+        <p>
+            Calvary greeting to you all in Jesus name.
+            We sincerely appreciate you for your prayers and partnership with us. The Lord has considered this you will not lose your reward in Jesus name.
+        </p>
+        <p>
+            Permit me to keep reminding you of our aims and objectives as captured in our motto, vision, and mission statements. Our motto remains Godliness, Excellence and Positive influence while our vision is ...that he might seek a godly seed. Mal 2:15. The school mission is, in partnership with God, Godly seeds Christian college seeks to provide functional education aimed at raising godly children with excellent spirit to become outstanding godly leaders and influence their generation positively.
+        </p>
+
+        <p>
+
+            In order to stay focused on our vision, please note the following:
+        </p>
+        <p>
+            1. Pay up their fees to help them focus on their studies. Pay school fees to Access Bank Plc, Account no. 0004477090; Account Name: Anyanwaokoro Michael/Justina. Boarding fees should be paid into Fidelity Bank Plc, Account No. 4020413388. Account name: Anyanwaokoro Michael. The child’s name should be used as the depositor. Students are to return with their evidence of payment as they return on 24th of September 2022.
+        </p>
+        <p>
+            2. Please ensure that all your child’s belongings are properly marked by embroidering/knitting/painting his/her name on them for easy identification, so as to help us identify the owners when misplaced.
+        </p>
+        <p>
+            3. Please endeavor to amend their torn uniforms as they return in order to maintain neatness.
+        </p>
+        <p>
+            4. Please comply with the school authority on the quantity of provision they are required to return with.
+        </p>
+        <p>
+            5. Advice your child to handle school property and his or her own property with care to avoid damages.
+        </p>
+        <p>
+            6. Always verify any information given to you by your ward(s) from the school authority before taking action.
+        </p>
+        <p class="bld">
+            7. Please ensure also that all the required office items are bought as they are returning which includes: 1 mop, 2 brooms, 2 tissues, 2 toilet soaps, 1 disinfectant and a medium sized sachet of detergent.
+        </p>
+        <p class="bld">
+            8. All students are to resume on 24th of September 2022 on or before 4:30pm. Those who fail to return on that date should return the following Saturday to avoid disrupting the school activities.
+        </p>
+        <p class="bld">
+            9. Please replace all your child's missing items before resumption including uniforms, wears, plates, cutlery, buckets, gallons, bedding, etc. drinking water gallons, Buckets and Mosquito nets will be strictly checked.
+        </p>
+        <p>
+
+            God bless you immensely as you continue to pray for us. We are praying for you.
+            <br />
+            <br />
+            Mrs. Nwaneri Uche
+            <br />
+            Principal
+
+        </p>
+    </div>
+
+
+}
+
+

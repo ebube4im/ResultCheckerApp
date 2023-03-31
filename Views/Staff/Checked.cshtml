@@ -1,0 +1,24 @@
+﻿@model GodlySeeds_Online_Result_Checker.Models.CheckedVM
+
+@{
+    ViewBag.Title = "Checked";
+    Layout = "~/Views/Shared/_AdminDashboard.cshtml";
+}
+
+<h2>Checked</h2>
+
+<p>
+  List of students who have checked their results
+</p>
+<table class="table">
+    
+
+@foreach (var item in Model.CheckedList.OrderByDescending()) {
+    <tr>
+        <td>
+         @item
+        </td>
+    </tr>
+}
+
+</table>

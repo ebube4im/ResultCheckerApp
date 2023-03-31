@@ -1,0 +1,469 @@
+﻿@model GodlySeeds_Online_Result_Checker.Models.PrintResultViewModel
+@{
+    Layout = "~/Views/Shared/_AdminDashboard.cshtml";
+}
+     <div class="card card-body">
+        <!-- Page Heading -->
+        <h3>Godly Seeds E-learning portal</h3>
+        <hr />
+        <h5 class="h5 mb-2 text-gray-800">Welcome @Model.StudentName!</h5>
+        <hr />
+
+        <p class="mb-4"> The materials below are for @Model.Class </p>
+        <p> Note that a Whatsapp group has been created for your class to enable you ask questions and suggestions</p>
+        @if (Model.Class == "JSS1")
+        {
+            <a class="btn btn-danger mb-4" target="_blank" href="https://chat.whatsapp.com/C2ZNloL8jCPHXTCncpjGFI">Join Whatsapp Group</a>
+
+        }
+        else if (Model.Class == "JSS2")
+        {
+            <a class="btn btn-danger mb-4" target="_blank" href="https://chat.whatsapp.com/L5iLMIeSaUX3buR4PCvBQn">Join Whatsapp Group</a>
+
+        }
+        else if (Model.Class == "JSS3")
+        {
+            <a class="btn btn-danger mb-4" target="_blank" href="https://chat.whatsapp.com/K0Hp2l8evpoIAJhlHu4y57">Join Whatsapp Group</a>
+
+        }
+        else if (Model.Class == "SS1")
+        {
+            <a class="btn btn-danger mb-4" target="_blank" href="https://chat.whatsapp.com/FIKq0W7JaD4H5hWmqkXtpI">Join Whatsapp Group</a>
+
+        }
+
+       
+    </div>
+<br />
+         <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Subjects</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    @if (Model.Class == "JSS1")
+                    {
+
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+                            <thead>
+                                <tr>
+                                    <td>S/N</td>
+                                    <td>SUBJECT</td>
+                                    <td>Actions</td>
+                                </tr>
+                            </thead>
+
+                            <tr>
+                                <td>1</td>
+                                <td>ENGLISH LANGUAGE</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS1/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>2</td>
+                                <td>MATHEMATICS</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS1/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>3</td>
+                                <td>BASIC SCIENCE</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS1/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>4</td>
+                                <td>BASIC TECHNOLOGY</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS1/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>5</td>
+                                <td>AGRICULTURAL SCIENCE</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS1/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>6</td>
+                                <td>COMPUTER STUDIES</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS1/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>7</td>
+                                <td>SOCIAL STUDIES</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS1/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>8</td>
+                                <td>CIVIC EDUCATION</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS1/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>9</td>
+                                <td>CHRISTIAN RELIGIOUS STUDIES</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS1/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>10</td>
+                                <td>IGBO LANGUAGE</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS1/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>11</td>
+                                <td>FRENCH LANGUAGE</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS1/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>13</td>
+                                <td>HEALTH AND PHYSICAL EDUCATION</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS1/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>14</td>
+                                <td>HOME ECONOMICS</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS1/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>15</td>
+                                <td>CULTURAL AND CREATIVE ARTS</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS1/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+
+
+                        </table>
+                    }
+                    else if (Model.Class == "JSS2")
+                    {
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+                            <thead>
+                                <tr>
+                                    <td>S/N</td>
+                                    <td>SUBJECT</td>
+                                    <td>Actions</td>
+                                </tr>
+                            </thead>
+
+                            <tr>
+                                <td>1</td>
+                                <td>ENGLISH LANGUAGE</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS2/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>2</td>
+                                <td>MATHEMATICS</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS2/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>3</td>
+                                <td>BASIC SCIENCE</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS2/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>4</td>
+                                <td>BASIC TECHNOLOGY</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS2/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>5</td>
+                                <td>AGRICULTURAL SCIENCE</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS2/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>6</td>
+                                <td>COMPUTER STUDIES</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS2/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>7</td>
+                                <td>SOCIAL STUDIES</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS2/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>8</td>
+                                <td>CIVIC EDUCATION</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS2/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>9</td>
+                                <td>CHRISTIAN RELIGIOUS STUDIES</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS2/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>10</td>
+                                <td>IGBO LANGUAGE</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS2/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>11</td>
+                                <td>FRENCH LANGUAGE</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS2/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>13</td>
+                                <td>HEALTH AND PHYSICAL EDUCATION</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS2/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>14</td>
+                                <td>HOME ECONOMICS</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS2/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>15</td>
+                                <td>CULTURAL AND CREATIVE ARTS</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS2/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+
+
+                        </table>
+                    }
+                    else if (Model.Class == "JSS3")
+                    {
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+                            <thead>
+
+
+                                <tr>
+                                    <td>S/N</td>
+                                    <td>SUBJECT</td>
+                                    <td>Actions</td>
+                                </tr>
+                            </thead>
+
+                            <tr>
+                                <td>1</td>
+                                <td>ENGLISH LANGUAGE</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS3/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>2</td>
+                                <td>MATHEMATICS</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS3/" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>3</td>
+                                <td>BASIC SCIENCE</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS3/" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>4</td>
+                                <td>BASIC TECHNOLOGY</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS3/" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>5</td>
+                                <td>AGRICULTURAL SCIENCE</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS3/" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>6</td>
+                                <td>COMPUTER STUDIES</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS3/" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>7</td>
+                                <td>SOCIAL STUDIES</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS3/" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>8</td>
+                                <td>CIVIC EDUCATION</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS3/" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>9</td>
+                                <td>CHRISTIAN RELIGIOUS STUDIES</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS3/" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>10</td>
+                                <td>IGBO LANGUAGE</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS3/" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>11</td>
+                                <td>FRENCH LANGUAGE</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS3/" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>13</td>
+                                <td>HEALTH AND PHYSICAL EDUCATION</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS3/" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>14</td>
+                                <td>HOME ECONOMICS</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS3/" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>15</td>
+                                <td>CULTURAL AND CREATIVE ARTS</td>
+                                <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/JSS3/" class="btn btn-primary">Open Folder</a></td>
+                            </tr>
+
+
+
+                        </table>
+                    }
+                    else if (Model.Class == "SS1")
+                    {
+
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+                    <thead>
+                        <tr>
+                            <td>S/N</td>
+                            <td>SUBJECT</td>
+                            <td>Actions</td>
+                        </tr>
+                    </thead>
+
+                    <tr>
+                        <td>1</td>
+                        <td>ENGLISH LANGUAGE</td>
+                        <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/SSS%201/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>MATHEMATICS</td>
+                        <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/SSS%201/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>PHYSICS</td>
+                        <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/SSS%201/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td>CHEMISTRY</td>
+                        <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/SSS%201/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td>BIOLOGY</td>
+                        <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/SSS%201/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>6</td>
+                        <td>AGRICULTURE</td>
+                        <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/SSS%201/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>7</td>
+                        <td>GEOGRAPHY</td>
+                        <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/SSS%201/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>8</td>
+                        <td>COMMERCE</td>
+                        <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/SSS%201/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>9</td>
+                        <td>GOVERNMENT</td>
+                        <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/SSS%201/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>10</td>
+                        <td>C.R.S</td>
+                        <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/SSS%201/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>11</td>
+                        <td>ECONOMICS</td>
+                        <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/SSS%201/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>12</td>
+                        <td>LIT-IN-ENGLISH</td>
+                        <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/SSS%201/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>13</td>
+                        <td>IGBO LANGUAGE</td>
+                        <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/SSS%201/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>14</td>
+                        <td>MATHEMATICS</td>
+                        <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/SSS%201/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>15</td>
+                        <td>BIBLE STUDY</td>
+                        <td><a href="https://godlyseeds.imfast.io/GODLYSEEDS%20ELERNING/SSS%201/" target="_blank" class="btn btn-primary">Open Folder</a></td>
+                    </tr>
+
+                </table>
+                    }
+                    else
+                    {
+                        <h2>No Class has been selected!</h2>
+                    }
+
+
+
+                </div>
+
+
+
+            </div>
+             
+        </div>
+ 
+
+

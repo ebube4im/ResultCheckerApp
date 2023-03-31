@@ -1,0 +1,55 @@
+﻿@model GodlySeeds_Online_Result_Checker.Models.Admission
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LoginLayoutPage.cshtml";
+}
+
+
+<section id="loginForm">
+
+    @using (Html.BeginForm("Index", "CheckAdmission", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+
+    {
+        <img id="logo" src="~/Content/GodlyseedsenuguLogo.png" height="100" />
+
+        @Html.AntiForgeryToken()
+        <h3>Check Admission Status</h3>
+
+        if (Model.ErrorMessage != null)
+        {
+            <p class="alert alert-danger"> @Model.ErrorMessage </p>
+
+        }
+
+        <hr />
+        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+
+
+        <div class="form-group col-lg-10 col-md-10 col-sm-10 col-xs-12">
+
+            @Html.LabelFor(m => m.parentPhone, new { @class = "col-lg-10 col-md-8 col-xs-10" })
+            @Html.TextBoxFor(m => m.parentPhone, new { @class = "form-control", @placeholder = "Enter Parent's Phone Number" })
+            @Html.ValidationMessageFor(m => m.parentPhone, "", new { @class = "text-danger" })
+        </div>
+
+
+
+        <div class="form-group">
+            <div class="col-md-10 col-sm-10 col-xs-12">
+                <input type="submit" value="Check Admission" class="btn btn-lg btn-default" />
+
+            </div>
+
+        </div>
+
+    }
+
+
+
+</section>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+

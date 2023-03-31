@@ -1,0 +1,92 @@
+﻿@model IEnumerable<GodlySeeds_Online_Result_Checker.Models.PrintSubjectViewModel>
+
+
+ 
+    
+    <div class="col-12">
+        <table style="margin-top:-10px" class="table table-hover table-striped table-bordered table-sm">
+            <thead class="thead-light">
+                <tr style="background-color:#4b94ee; color:white;">
+
+                    <th>
+                        Subject Name
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CA1)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CA2)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CA3)
+                    </th>
+                    
+                    <th>
+                        @Html.DisplayNameFor(model => model.EXAM)
+                    </th>
+                    <th id="lowest">
+                        @Html.DisplayNameFor(model => model.LOWESTINCLASS)
+                    </th>
+                    <th id="lowest">
+                        @Html.DisplayNameFor(model => model.HIGHESTINCLASS)
+                    </th>
+                    <th id="lowest">
+                        @Html.DisplayNameFor(model => model.CLASSAVERAGE)
+                    </th>
+                    <th id="lowest">
+                        @Html.DisplayNameFor(model => model.TOTAL)
+                    </th>
+                    <th id="lowest">
+                        @Html.DisplayNameFor(model => model.GRADE)
+                    </th>
+
+                </tr>
+                </thead>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td style="width:200px">
+                            @Html.DisplayFor(modelItem => item.Subjectname)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CA1)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CA2)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CA3)
+                        </td>
+                       
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EXAM)
+                        </td>
+                        <td id="lowest">
+                            @Html.DisplayFor(modelItem => item.LOWESTINCLASS)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.HIGHESTINCLASS)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CLASSAVERAGE)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TOTAL)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.GRADE)
+                        </td>
+
+                    </tr>
+                }
+
+        </table>
+    </div>
+
+ 
+
+
+
+

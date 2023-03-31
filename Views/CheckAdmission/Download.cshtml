@@ -1,0 +1,38 @@
+﻿@model GodlySeeds_Online_Result_Checker.Models.Admission
+
+@{
+    ViewBag.Title = "Download";
+    Layout = "~/Views/Shared/_AdminDashboard.cshtml";
+}
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+
+        <h3 class="m-0 font-weight-bold text-primary">Godly Seeds Admission portal</h3>
+    </div>
+
+    <div class="card-body">
+        @if (Model.parentPhone != null)
+        {
+             
+            <h5 class="h5 mb-2 text-gray-800">Congratulations <span class="text-danger"> @Model.studentName! </span> You have been offered provisional Admission with a score of @Model.Score</h5>
+
+            <hr />
+
+            <p>
+                You are expected to dowload the prospectus and go ahead to accept the admission by making payments <br />
+                Note that the admision is only valid for a limited time pending your response thrugh payment after which your admission status will be reverted
+            </p>
+
+            <a href="~/Content/Uploads/GSCC_PROSPECTUS.pdf" target="_blank" download class="btn btn-primary"> Download Prospectus</a>
+            <hr />
+
+        }
+        else
+        {
+            <h4 class="text-danger">Oops! No details found</h4>
+        }
+
+    </div>
+</div>

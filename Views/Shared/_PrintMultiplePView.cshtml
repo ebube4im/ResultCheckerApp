@@ -1,0 +1,226 @@
+﻿@model GodlySeeds_Online_Result_Checker.Models.PrintResultViewModel
+
+@{
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/css/print.css" rel="stylesheet" media="print" />
+    <link href="~/Content/css/sheets-of-paper-a4.css" rel="stylesheet" />
+    <style>
+        .himg {
+            width: 100px;
+            height: 100px;
+        }
+
+        h1 {
+            font-size: 15px;
+        }
+
+        h3, h4 {
+            font-size: 13px;
+        }
+
+        /*.resulttable {
+                display: block;
+            }*/
+
+        /*.resulttable td {
+                    font-size: 10px;
+                }
+
+                .resulttable th {
+                    font: bold 12px Times New Roman, arial, verdana;
+                    padding: 3px;
+                }
+
+            #lowest {
+                width: 60px;
+            }
+
+            .mytable td {
+                font-size: 12px;
+            }*/
+
+
+        table {
+            font-size: 10px;
+        }
+
+
+        .table1 {
+            font-size: 12px;
+            text-align: center;
+            text-wrap: avoid;
+        }
+        /*.position-display {
+        text-align: center;
+        border: 3px solid #777;
+        }*/
+
+    </style>
+
+
+</head>
+<body class="document">
+    <div class="page" contenteditable="false">
+
+        
+
+        <div class="row">
+
+            <div class="col-10">
+                <img src="~/Content/godlyseeds2.png" class="img himg float-left" alt="Godly Seeds Logo" />
+
+
+                <div style="text-align:center; float:left">
+                    <h1><strong>GODLY SEEDS CHRISTIAN COLLEGE ENUGU</strong> </h1>
+                    <h6><strong>P.O. BOX 9085 | TEL: 07066583727  | Email: godlyseedsenugu@gmail.com </strong></h6>
+                    <h6><strong>Website: www.godlyseedsenugu.org  |  Fb: Godly Seeds Christian College </strong></h6>
+                    <h3>
+                        CONTINUOUS ASSESSMENT DOSSIER  |  @Html.DisplayFor(model => model.Class)
+                    </h3>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="details">
+
+            <table class="table col-lg-10 col-sm-10 col-xs-10 table-sm">
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.StudentName)  :  <strong> @Html.DisplayFor(model => model.StudentName) </strong></td>
+
+                    <td>@Html.DisplayNameFor(model => model.AdmissionNo)  : <strong> @Html.DisplayFor(model => model.AdmissionNo)</strong></td>
+
+                    <td>
+                        @Html.DisplayNameFor(model => model.Gender)  : <strong> @Html.DisplayFor(model => model.Gender) </strong>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Session:  <strong>2021/2022 </strong></td>
+
+
+                    <td>@Html.DisplayNameFor(model => model.NoinClass)   : <strong> @Html.DisplayFor(model => model.NoinClass) </strong></td>
+
+ 
+                        <td>Position :  <strong> @Html.DisplayFor(model => model.Position) </strong></td>
+
+                   
+
+                </tr>
+            </table>
+
+        </div>
+
+        <hr />
+
+        <div class="row">
+
+           
+                @Html.Partial("_ResultTable", Model.mySubjects)
+            
+
+
+
+        </div>
+
+        <table border="1" style="width:100%; margin-top:-10px" class="table mytable table-responsive table-striped mytable col-lg-12 col-xs-12">
+
+            @if (Model.Term == "Annual")
+            {
+
+                <tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.printAnnualViewModel.firstTermTotalAverage)  : <strong> @Html.DisplayFor(model => model.printAnnualViewModel.firstTermTotalAverage) </strong>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        @Html.DisplayNameFor(model => model.printAnnualViewModel.secondTermTotalAverage)  : <strong> @Html.DisplayFor(model => model.printAnnualViewModel.secondTermTotalAverage)  </strong>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        @Html.DisplayNameFor(model => model.printAnnualViewModel.thirdTermTotalAverage)  : <strong> @Html.DisplayFor(model => model.printAnnualViewModel.thirdTermTotalAverage) </strong>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </td>
+                </tr>
+            }
+
+
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.TotalMarksObtained)  : <strong> @Html.DisplayFor(model => model.TotalMarksObtained) </strong>
+                    &nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;
+                    @Html.DisplayNameFor(model => model.TotalMarksObtainable)  : <strong> @Html.DisplayFor(model => model.TotalMarksObtainable)  </strong>
+                    &nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;
+
+
+                    @if (Model.Term == "Annual")
+                    {
+                        @Html.DisplayNameFor(model => model.printAnnualViewModel.Average);
+                        <strong> : @Html.DisplayFor(model => model.printAnnualViewModel.Average) &nbsp; &nbsp; &nbsp; &nbsp;  | &nbsp; &nbsp;</strong>
+
+
+
+                        @Html.DisplayNameFor(model => model.printAnnualViewModel.OVERALLPOSITION);
+                        <strong> : @Html.DisplayFor(model => model.printAnnualViewModel.OVERALLPOSITION)   </strong>
+
+                    }
+
+                    else
+                    {
+                        @Html.DisplayNameFor(model => model.Average);
+                        <strong> : @Html.DisplayFor(model => model.Average)       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </strong>
+                        @Html.DisplayNameFor(model => model.Position); <strong> : @Html.DisplayFor(model => model.Position) </strong>
+
+
+                    }
+
+
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    PRINCIPAL'S NAME  :  MRS UCHE NWANERI   &nbsp;&nbsp;  |    SIGNATURE :&nbsp;
+                    |  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  DATE Printed:  @DateTime.Now.Date.ToShortDateString()   |
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button onclick="window.print()" class="btn btn-danger btn-sm" style="float:none;"> Print Result</button>
+
+                </td>
+            </tr>
+            <tr>
+                <td> <strong>RESUMPTION DATE: Monday, 7th December 2020.</strong> </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <p>
+                        KEYS TO GRADING: A1- Excellent; B2- Very Good; B3- Good; C4- Credit; C5- Credit; D7- Pass; E8- Weak Pass; F9- Fail;
+                    </p>
+                    <p>
+                        A1:- 75 & Above | B2:- 70-74 | B3:- 65-69 | C4:- 60-64 | C5:- 55-59 | C6:- 50-54 | D7:- 45-49 | E8:- 40-44 | F9:- 0-39
+                    </p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Powered by 4im Digitals
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://4imdigitals.com"> 4im Digitals </a>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 07038229702
+
+                </td>
+
+
+            </tr>
+        </table>
+
+    </div>
+
+</body>
+</html>
+
+
+
